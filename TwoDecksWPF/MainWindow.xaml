@@ -20,12 +20,12 @@
         <Label Content="Deck _1" x:Name="deck1Label" Margin="10,0,0,0" Target="{Binding ElementName=leftDeckListBox, Mode=OneWay}"/>
         <Label Content="Deck _2" x:Name="deck2Label" Grid.Column="1" Margin="10,0,0,0" Target="{Binding ElementName=rightDeckListBox, Mode=OneWay}"/>
 
-        <ListBox x:Name="leftDeckListBox" Grid.Row="1" Margin="10,0,10,10" ItemsSource="{DynamicResource leftDeck}"/>
-        <ListBox x:Name="rightDeckListBox" Grid.Row="1" Grid.Column="1" Margin="10,0,10,10" ItemsSource="{DynamicResource rightDeck}"/>
+        <ListBox x:Name="leftDeckListBox" Grid.Row="1" Margin="10,0,10,10" ItemsSource="{DynamicResource leftDeck}" KeyDown="leftDeckListBox_KeyDown" MouseDoubleClick="leftDeckListBox_MouseDoubleClick"/>
+        <ListBox x:Name="rightDeckListBox" Grid.Row="1" Grid.Column="1" Margin="10,0,10,10" ItemsSource="{DynamicResource rightDeck}" MouseDoubleClick="rightDeckListBox_MouseDoubleClick" KeyDown="rightDeckListBox_KeyDown"/>
 
-        <Button Content="_Shuffle" Grid.Row="2" x:Name="shuffleLeftDeck" Margin="10,0,10,10"/>
-        <Button Content="_Reset" Grid.Row="3" x:Name="resetLeftDeck" Margin="10,0,10,10"/>
-        <Button Content="_Clear" Grid.Row="2" Grid.Column="1" x:Name="clearRightDeck" Margin="10,0,10,10"/>
-        <Button Content="Sor_t" Grid.Row="3" Grid.Column="1" x:Name="sortRightDeck" Margin="10,0,10,10"/>
+        <Button Content="_Shuffle" Grid.Row="2" x:Name="shuffleLeftDeck" Margin="10,0,10,10" Click="shuffleLeftDeck_Click"/>
+        <Button Content="_Reset" Grid.Row="3" x:Name="resetLeftDeck" Margin="10,0,10,10" Click="resetLeftDeck_Click"/>
+        <Button Content="_Clear" Grid.Row="2" Grid.Column="1" x:Name="clearRightDeck" Margin="10,0,10,10" Click="clearRightDeck_Click"/>
+        <Button Content="Sor_t" Grid.Row="3" Grid.Column="1" x:Name="sortRightDeck" Margin="10,0,10,10" Click="sortRightDeck_Click"/>
     </Grid>
 </Window>
