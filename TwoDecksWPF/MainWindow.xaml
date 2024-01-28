@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TwoDecksWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Two Decks" Height="450" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>            <ColumnDefinition/>            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>            <RowDefinition Height="Auto" />            <RowDefinition/>            <RowDefinition Height="Auto" />            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Deck _1" x:Name="deck1Label" Margin="10,0,0,0" Target="{Binding ElementName=leftDeckListBox, Mode=OneWay}"/>
+        <Label Content="Deck _2" x:Name="deck2Label" Grid.Column="1" Margin="10,0,0,0" Target="{Binding ElementName=rightDeckListBox, Mode=OneWay}"/>
+
+        <ListBox x:Name="leftDeckListBox" Grid.Row="1" Margin="10,0,10,10"/>
+        <ListBox x:Name="rightDeckListBox" Grid.Row="1" Grid.Column="1" Margin="10,0,10,10"/>
+
+        <Button Content="_Shuffle" Grid.Row="2" x:Name="shuffleLeftDeck" Margin="10,0,10,10"/>
+        <Button Content="_Reset" Grid.Row="3" x:Name="resetLeftDeck" Margin="10,0,10,10"/>
+        <Button Content="_Clear" Grid.Row="2" Grid.Column="1" x:Name="clearRightDeck" Margin="10,0,10,10"/>
+        <Button Content="Sor_t" Grid.Row="3" Grid.Column="1" x:Name="sortRightDeck" Margin="10,0,10,10"/>
     </Grid>
 </Window>
